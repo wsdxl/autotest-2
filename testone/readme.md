@@ -11,11 +11,12 @@
 
 机器B 
 1. git clone `<url>`
-2. git add "文件名"  或者 git add —A
+2. 运行npm install 或cnpm install 来安装依赖库
+3. git add "文件名"  或者 git add —A
 
-3. git commit -m "备注"
+4. git commit -m "备注"
 上传到服务器
-4. git push 
+5. git push 
 ----
 
 回到机器A

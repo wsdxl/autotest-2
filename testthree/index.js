@@ -41,8 +41,10 @@ var driver = new webdriver.Builder().forBrowser('chrome').build();
 
 
 driver.get('https://www.baidu.com');
-var path=require('path');
-var dirpath=path.join(__dirname,'image');
-driver.takeScreenshot().then((imp)=>{
-    require('fs').writeFileSync(dirpath+'/01.png',imp,'base64') // 截屏到指定文件夹
+var path = require('path');
+var dirpath = path.join(__dirname, 'image');
+// var day =new Date().valueOf();
+var day = Date.now();
+driver.takeScreenshot().then((imp) => {
+    require('fs').writeFileSync(dirpath + '/' + day + '.png', imp, 'base64') // 截屏到指定文件夹
 })

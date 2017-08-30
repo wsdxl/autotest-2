@@ -40,11 +40,18 @@ var driver = new webdriver.Builder().forBrowser('chrome').build();
 // driver.findElement({css:'.upload-pic'}).sendKeys(pngpath);
 
 
-driver.get('https://www.baidu.com');
-var path = require('path');
-var dirpath = path.join(__dirname, 'image');
-// var day =new Date().valueOf();
-var day = Date.now();
-driver.takeScreenshot().then((imp) => {
-    require('fs').writeFileSync(dirpath + '/' + day + '.png', imp, 'base64') // 截屏到指定文件夹
-})
+// driver.get('https://www.baidu.com');
+// var path = require('path');
+// var dirpath = path.join(__dirname, 'image');
+// // var day =new Date().valueOf();
+// var day = Date.now();
+// driver.takeScreenshot().then((imp) => {
+//     require('fs').writeFileSync(dirpath + '/' + day + '.png', imp, 'base64') // 截屏到指定文件夹
+// })
+
+driver.get('file:///E:/index.html');   // alert按钮无法查找元素的处理方法
+
+driver.switchTo().alert().then(function(alert) {
+    driver.sleep(5000)
+    return alert.accept();
+});

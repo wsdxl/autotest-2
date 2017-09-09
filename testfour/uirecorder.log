@@ -1,0 +1,26 @@
+    __  ______   ____                           __         
+   / / / /  _/  / __ \___  _________  _________/ /__  _____
+  / / / // /   / /_/ / _ \/ ___/ __ \/ ___/ __  / _ \/ ___/
+ / /_/ // /   / _, _/  __/ /__/ /_/ / /  / /_/ /  __/ /    
+ \____/___/  /_/ |_|\___/\___/\____/_/   \__,_/\___/_/    v2.5.29
+
+Official Site: http://uirecorder.com
+------------------------------------------------------------------
+
+? Dom path config, extend: id, name, class (data-id,data-name,type,data-type,role,data-role,data-value) ? Dom path config, extend: id, name, class data-id,data-name,type,data-type,role,data-role,data-value
+? Black list RegExp for attribute value () ? Black list RegExp for attribute value 
+? Black list RegExp for class value () ? Black list RegExp for class value 
+? Hide before expect () ? Hide before expect 
+? Webdriver host or ip (127.0.0.1) ? Webdriver host or ip 127.0.0.1
+? Webdriver port (4444) ? Webdriver port 4444
+? Browsers list (chrome, ie 11) ? Browsers list chrome, ie 11
+
+config.json file saved
+
+Start install project dependencies...
+--------------------------------------------
+
+
+Start install webdriver dependencies...
+--------------------------------------------
+

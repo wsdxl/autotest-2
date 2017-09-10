@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha index.js --reporter mochawesome "
+    "test": "mocha index2.js --reporter mochawesome ",
+    "testing": "mocha index.js --reporter mochawesome "
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,8 @@
     "chromedriver": "^2.32.2",
     "mocha": "^3.5.1",
     "mochawesome": "^2.3.0",
+    "mongod": "^2.0.0",
+    "mongodb": "^2.2.31",
     "selenium-webdriver": "^3.5.0"
   }
 }

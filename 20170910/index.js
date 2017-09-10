@@ -32,10 +32,8 @@ describe('登录', function () {
     it('点击登录按钮', async () => {
         await driver.findElement({ linkText: '登录' }).click();
     });
-    it('输入用户名', async () => {
+    it('输入用户名和密码', async () => {
         await driver.findElement({ id: 'name' }).sendKeys('abcduxiaolei');
-    });
-    it('输入密码', async () => {
         await driver.findElement({ id: 'pass' }).sendKeys('abc4862556');
     });
     it('点击登录', async () => {

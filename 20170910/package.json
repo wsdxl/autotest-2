@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha index2.js --reporter mochawesome ",
-    "testing": "mocha index.js --reporter mochawesome "
+    "test": "mocha index1.js --reporter mochawesome ",
+    "testing": "mocha index2.js --reporter mochawesome "
   },
   "author": "",
   "license": "ISC",

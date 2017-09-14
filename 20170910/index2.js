@@ -1,3 +1,6 @@
+/**
+ * 登录、发布话题、上传图片、链接、回帖、编辑回帖、删除回帖
+ */
 describe('登录', function () {
     var assert = require('assert');
     require('chromedriver');
@@ -5,7 +8,7 @@ describe('登录', function () {
     var driver = new webdriver.Builder().forBrowser('chrome').build();
     var fs = require('fs');
 
-    this.timeout(8000)
+    this.timeout(14000)
     before(function () {
         driver.manage().window().maximize();
     });
@@ -22,7 +25,7 @@ describe('登录', function () {
     afterEach(async function () {
         await driver.takeScreenshot().then(function (imagedata) {
             var day = new Date().valueOf();
-            fs.writeFileSync('image/'+day + '.png', imagedata, 'base64')
+            fs.writeFileSync('image/' + day + '.png', imagedata, 'base64')
         })
     });
     it('打开首页', async () => {
@@ -67,6 +70,31 @@ describe('登录', function () {
         await driver.findElement({ css: '.btn.btn-primary' }).click();
         await driver.findElement({ css: '.span-primary.submit_btn' }).submit();
     });
-
+    it('添加回复_照片', async () => {
+        await driver.sleep(2000);
+        await driver.findElement({ css: '.eicon-image' }).click();
+        await driver.findElement({ name: 'file' }).sendKeys('F://图片//02.png');
+    });
+    it('添加回复_内容', async () => {
+        await driver.sleep(2000);
+        await driver.findElement({ css: '.CodeMirror.cm-s-paper' }).click();
+        let oc = driver.findElement({ xpath: '//*[@id="reply_form"]/div/div/div[2]/div[6]/div[2]' });
+        await driver.actions().mouseMove(oc).sendKeys('大家晚上好！').perform();
+        await driver.findElement({ xpath: '//*[@id="reply_form"]/div/div/div[3]/input' }).submit();
+    });
+    it('编辑回复', async () => {
+        await driver.sleep(2000);
+        await driver.findElement({ css: '.edit_reply_btn' }).click();
+        await driver.findElement({ css: '.CodeMirror.cm-s-paper' }).click();
+        let xo = driver.findElement({ xpath: '//*[@id="edit_reply_form"]/fieldset/div/div/div[2]/div[6]/div[2]' });
+        await driver.actions().mouseMove(xo).sendKeys('很晚了，准备睡觉喽！').perform();
+        await driver.findElement({ xpath: '//*[@id="edit_reply_form"]/fieldset/div/div/div[4]/input' }).submit();
+    });
+    it('删除回复', async () => {
+        await driver.findElement({ css: '.delete_reply_btn' }).click();
+        await driver.switchTo().alert().then((alert) => {
+            return alert.accept();
+        })
+    });
 })
 

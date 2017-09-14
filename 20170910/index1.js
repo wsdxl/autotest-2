@@ -1,3 +1,6 @@
+/**
+ * 注册功能
+ */
 describe('注册', function () {
     var assert = require('assert');
     require('chromedriver');

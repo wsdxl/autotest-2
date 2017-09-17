@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha index1.js --reporter mochawesome ",
-    "testing": "mocha index2.js --reporter mochawesome "
+    "testing": "mocha index2.js --reporter mochawesome ",
+    "jenkins:dev": ".node_modules/.bin/jenkins_mocha "
   },
   "author": "",
   "license": "ISC",
